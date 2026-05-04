@@ -9,78 +9,91 @@
 <style>
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f8f9f7;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f4f8f4;
   color: #1a1a1a;
 }
 
 header {
-  background: linear-gradient(to right, #1b5e20, #2e7d32);
-  color: white;
-  padding: 15px 30px;
+  background: white;
+  padding: 15px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-header h1 {
-  margin: 0;
+header img {
+  height: 60px;
 }
 
 .hero {
-  background-image: url('https://images.unsplash.com/photo-1508057198894-247b23fe5ade');
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+  url('https://images.unsplash.com/photo-1505761671935-60b3a7427bad');
   background-size: cover;
   background-position: center;
-  padding: 120px 20px;
+  padding: 140px 20px;
   text-align: center;
   color: white;
 }
 
-.hero h2 {
-  font-size: 40px;
+.hero h1 {
+  font-size: 48px;
   margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 20px;
 }
 
 .btn {
   background: #2e7d32;
   color: white;
-  padding: 12px 20px;
-  margin: 10px;
-  border: none;
+  padding: 14px 24px;
   border-radius: 8px;
+  border: none;
   cursor: pointer;
+  font-size: 16px;
 }
 
 .section {
-  padding: 60px 20px;
+  padding: 70px 20px;
   text-align: center;
 }
 
 .services {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
 }
 
 .card {
   background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
 
-footer {
-  background: linear-gradient(to right, #1b5e20, #2e7d32);
-  color: white;
-  padding: 40px 20px;
+.about {
+  max-width: 800px;
+  margin: auto;
 }
 
-input, textarea {
+form input, form textarea {
   width: 90%;
-  padding: 10px;
+  padding: 12px;
   margin: 10px;
   border-radius: 6px;
   border: 1px solid #ccc;
+}
+
+footer {
+  background: #1b5e20;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
 }
 </style>
 
@@ -89,7 +102,7 @@ input, textarea {
 <body>
 
 <header>
-  <h1>ICU Investigations</h1>
+  <img src="https://via.placeholder.com/150x60?text=ICU+Logo" alt="ICU Logo">
   <div>
     <button class="btn">Free Consultation</button>
     <button class="btn">317-426-6002</button>
@@ -97,8 +110,9 @@ input, textarea {
 </header>
 
 <section class="hero">
-  <h2>Answers You Need. Results You Can Trust.</h2>
-  <p>Professional investigative services in Indianapolis</p>
+  <h1>Professional. Confidential. Reliable.</h1>
+  <p>Serving Indianapolis with trusted investigative services</p>
+  <button class="btn">Get Started</button>
 </section>
 
 <section class="section">
@@ -113,12 +127,12 @@ input, textarea {
   </div>
 </section>
 
-<section class="section">
-  <h2>About Us</h2>
+<section class="section about">
+  <h2>About ICU Investigations</h2>
   <p>
-    ICU Investigations LLC is a premier minority and woman-owned firm dedicated to providing comprehensive private investigation services. 
-    Our expertise covers background checks, surveillance, relationship investigations, and more, all with a commitment to professionalism 
-    and confidentiality, ensuring that each case is handled with integrity and tailored to meet the unique needs of our clients.
+  ICU Investigations LLC is a premier minority and woman-owned firm dedicated to providing comprehensive private investigation services.
+  Our expertise covers background checks, surveillance, relationship investigations, and more, all with a commitment to professionalism
+  and confidentiality, ensuring that each case is handled with integrity and tailored to meet the unique needs of our clients.
   </p>
 </section>
 
