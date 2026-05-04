@@ -14,22 +14,28 @@ body {
   color: #1a1a1a;
 }
 
+/* HEADER */
 header {
   background: white;
   padding: 15px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
 header img {
-  height: 60px;
+  height: 55px;
 }
 
+.nav-buttons button {
+  margin-left: 10px;
+}
+
+/* HERO */
 .hero {
-  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df');
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+  url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df');
   background-size: cover;
   background-position: center;
   padding: 140px 20px;
@@ -44,9 +50,10 @@ url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df');
 
 .hero p {
   font-size: 18px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
+/* BUTTON */
 .btn {
   background: #2e7d32;
   color: white;
@@ -57,11 +64,30 @@ url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df');
   font-size: 16px;
 }
 
+/* SECTIONS */
 .section {
   padding: 70px 20px;
   text-align: center;
 }
 
+.section h2 {
+  margin-bottom: 20px;
+}
+
+/* TRUST BAR */
+.trust {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 40px 20px;
+  background: white;
+}
+
+.trust div {
+  font-weight: 500;
+}
+
+/* SERVICES */
 .services {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -76,14 +102,18 @@ url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df');
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
   transition: transform 0.2s;
 }
+
 .card:hover {
   transform: translateY(-5px);
 }
+
+/* ABOUT */
 .about {
   max-width: 800px;
   margin: auto;
 }
 
+/* FORM */
 form input, form textarea {
   width: 90%;
   padding: 12px;
@@ -92,6 +122,7 @@ form input, form textarea {
   border: 1px solid #ccc;
 }
 
+/* FOOTER */
 footer {
   background: #1b5e20;
   color: white;
@@ -105,17 +136,24 @@ footer {
 <body>
 
 <header>
-  <img src="logo.png">
-  <div>
+  <img src="logo.png" alt="ICU Logo">
+  <div class="nav-buttons">
     <button class="btn">Free Consultation</button>
     <button class="btn">317-426-6002</button>
   </div>
 </header>
 
 <section class="hero">
-  <h1>Professional. Confidential. Reliable.</h1>
-  <p>Serving Indianapolis with trusted investigative services</p>
-  <button class="btn">Get Started</button>
+  <h1>Answers You Need. Results You Can Trust.</h1>
+  <p>Discreet, professional investigative services in Indianapolis</p>
+  <button class="btn">Request a Free Consultation</button>
+</section>
+
+<section class="trust">
+  <div>✔ Confidential & Private</div>
+  <div>✔ Experienced Investigations</div>
+  <div>✔ Discreet Operations</div>
+  <div>✔ Results Driven</div>
 </section>
 
 <section class="section">
