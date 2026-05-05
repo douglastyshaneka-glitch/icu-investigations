@@ -7,13 +7,18 @@
 <title>ICU Investigations</title>
 
 <style>
+  
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   background: #f4f8f4;
   color: #1a1a1a;
 }
-
+.hero-content {
+  max-width: 600px;
+  text-align: left;
+  margin-left: 5%;
+}
 /* HEADER */
 header {
   background: #1b5e20;
@@ -49,8 +54,13 @@ header img {
 /* HERO */
 .hero {
   position: relative;
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-url('https://images.unsplash.com/photo-1508057198894-247b23fe5ade');
+  background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+  url('https://images.unsplash.com/photo-1508057198894-247b23fe5ade');
+  background-size: cover;
+  background-position: center;
+  padding: 180px 20px;
+  color: white;
+  overflow: hidden;
 }
 
 .hero h1 {
@@ -139,12 +149,12 @@ footer {
 </header>
 
 <section class="hero">
-  <img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png" class="detective">
 
-  <h1>Answers You Need.<br><span>Results You Can Trust.</span></h1>
-  <p>Discreet, professional investigative services in Indianapolis</p>
-
-<button onclick="document.getElementById('contact').scrollIntoView()">Request Free Consultation</button>
+  <div class="hero-content">
+    <h1>Answers You Need.<br><span>Results You Can Trust.</span></h1>
+    <p>Discreet, professional investigative services in Indianapolis</p>
+    <button>Request Free Consultation</button>
+  </div>
 
 </section>
 
