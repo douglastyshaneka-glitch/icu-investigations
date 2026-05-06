@@ -797,6 +797,22 @@ transform:rotate(45deg);
 
 <script>
 
+const faqItems = document.querySelectorAll('.faq-item');
+
+faqItems.forEach(item => {
+
+const question = item.querySelector('.faq-question');
+
+question.addEventListener('click', () => {
+
+item.classList.toggle('active');
+
+});
+
+});
+
+</script>
+
 <footer>
 
 <div style="font-size:28px;font-weight:700;margin-bottom:14px;">
@@ -819,24 +835,6 @@ ICU Investigations LLC
 © 2026 ICU Investigations LLC. All rights reserved.
 </div>
 ```html
-
-<script>
-
-const faqItems = document.querySelectorAll('.faq-item');
-
-faqItems.forEach(item => {
-
-const question = item.querySelector('.faq-question');
-
-question.addEventListener('click', () => {
-
-item.classList.toggle('active');
-
-});
-
-});
-
-</script>
 
 </footer>
 
