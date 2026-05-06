@@ -621,46 +621,6 @@ Don’t see a service you need? Request a free consultation.
 </div>
 
 </section>
-
-<footer>
-
-<div style="font-size:28px;font-weight:700;margin-bottom:14px;">
-ICU Investigations LLC
-</div>
-
-<div style="font-size:18px;line-height:2;">
-
-📍 Indianapolis, Indiana<br>
-
-📞 317-426-6002<br>
-
-✉ icuinvestigationsicu@gmail.com<br>
-
-✔ Insured and Licensed with the State of Indiana
-
-</div>
-
-<div style="margin-top:22px;font-size:15px;opacity:.8;">
-© 2026 ICU Investigations LLC. All rights reserved.
-</div>
-```html
-
-const faqItems = document.querySelectorAll('.faq-item');
-
-faqItems.forEach(item => {
-
-const question = item.querySelector('.faq-question');
-
-question.addEventListener('click', () => {
-
-item.classList.toggle('active');
-
-});
-
-});
-
-</script>
-```
 <!-- ================= FAQ SECTION ================= -->
 
 <section class="faq-section">
@@ -836,6 +796,46 @@ transform:rotate(45deg);
 </style>
 
 <script>
+
+<footer>
+
+<div style="font-size:28px;font-weight:700;margin-bottom:14px;">
+ICU Investigations LLC
+</div>
+
+<div style="font-size:18px;line-height:2;">
+
+📍 Indianapolis, Indiana<br>
+
+📞 317-426-6002<br>
+
+✉ icuinvestigationsicu@gmail.com<br>
+
+✔ Insured and Licensed with the State of Indiana
+
+</div>
+
+<div style="margin-top:22px;font-size:15px;opacity:.8;">
+© 2026 ICU Investigations LLC. All rights reserved.
+</div>
+```html
+
+const faqItems = document.querySelectorAll('.faq-item');
+
+faqItems.forEach(item => {
+
+const question = item.querySelector('.faq-question');
+
+question.addEventListener('click', () => {
+
+item.classList.toggle('active');
+
+});
+
+});
+
+</script>
+```
 
 </footer>
 
