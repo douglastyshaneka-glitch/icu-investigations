@@ -1,9 +1,18 @@
+# ICU Investigations LLC — Luxury / High-End UI Upgrade
+
+Replace your current `index.html` with the upgraded version below.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ICU Investigations LLC</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
@@ -13,105 +22,141 @@ padding:0;
 box-sizing:border-box;
 }
 
+html{
+scroll-behavior:smooth;
+}
+
 body{
-font-family:'Segoe UI',sans-serif;
-background:#f5f6f3;
-color:#1a1a1a;
+font-family:'Inter',sans-serif;
+background:#f4f6f3;
+color:#111;
 overflow-x:hidden;
 }
 
-/* ================= HEADER ================= */
+img{
+max-width:100%;
+display:block;
+}
+
+/* =========================
+HEADER
+========================= */
 
 header{
-background:linear-gradient(90deg,#06351b,#0b5a26,#06351b);
-padding:18px 45px;
+position:sticky;
+top:0;
+z-index:9999;
+background:rgba(5,35,18,.92);
+backdrop-filter:blur(12px);
+border-bottom:1px solid rgba(255,255,255,.08);
+
+padding:18px 50px;
+
 display:grid;
 grid-template-columns:1fr auto 1fr;
 align-items:center;
-position:sticky;
-top:0;
-z-index:1000;
 }
 
 .logo{
 display:flex;
 align-items:center;
-gap:14px;
+gap:16px;
 }
 
 .logo img{
-height:68px;
-width:auto;
+height:72px;
+filter:drop-shadow(0 6px 12px rgba(0,0,0,.25));
 }
 
 .logo-text h2{
-color:white;
 font-size:18px;
-font-weight:700;
+font-weight:800;
+letter-spacing:.5px;
+color:white;
 }
 
 .logo-text p{
-color:#c9a227;
-font-size:12px;
-letter-spacing:1px;
-margin-top:2px;
+font-size:11px;
+letter-spacing:2px;
+margin-top:3px;
+color:#d4af37;
 }
-
-/* NAV */
 
 nav{
 display:flex;
 justify-content:center;
-gap:35px;
+gap:42px;
 }
 
 nav a{
 color:white;
 text-decoration:none;
-font-size:17px;
 font-weight:600;
+font-size:16px;
+position:relative;
+transition:.3s;
+}
+
+nav a::after{
+content:'';
+position:absolute;
+left:0;
+bottom:-8px;
+width:0;
+height:2px;
+background:#d4af37;
 transition:.3s;
 }
 
 nav a:hover{
-color:#c9a227;
+color:#d4af37;
 }
 
-/* RIGHT BUTTONS */
+nav a:hover::after{
+width:100%;
+}
 
 .nav-buttons{
 display:flex;
 justify-content:flex-end;
-gap:12px;
+gap:14px;
 }
 
 .nav-buttons button{
-padding:12px 20px;
+padding:13px 22px;
 border:none;
-border-radius:6px;
+border-radius:10px;
 font-weight:700;
-cursor:pointer;
 font-size:15px;
+cursor:pointer;
+transition:.3s ease;
 }
 
 .cta{
-background:#c9a227;
+background:#d4af37;
 color:#111;
+box-shadow:0 10px 20px rgba(212,175,55,.25);
 }
 
 .call{
-background:#2f8f3a;
+background:#1c7c3b;
 color:white;
 }
 
-/* ================= HERO ================= */
+.nav-buttons button:hover{
+transform:translateY(-3px);
+}
+
+/* =========================
+HERO
+========================= */
 
 .hero{
 position:relative;
-height:720px;
+min-height:92vh;
 
 background:
-linear-gradient(rgba(0,0,0,.52),rgba(0,0,0,.52)),
+linear-gradient(rgba(0,0,0,.60),rgba(0,0,0,.55)),
 url('skyline.jpg');
 
 background-size:cover;
@@ -121,215 +166,322 @@ display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
+padding:120px 20px;
 overflow:hidden;
+}
+
+.hero::before{
+content:'';
+position:absolute;
+inset:0;
+background:radial-gradient(circle at top right, rgba(212,175,55,.18), transparent 35%);
 }
 
 .hero-content{
 position:relative;
 z-index:2;
-max-width:950px;
-padding:20px;
+max-width:1050px;
 }
 
 .hero h1{
-font-size:82px;
-line-height:1.1;
-color:white;
+font-size:clamp(52px,8vw,96px);
+line-height:1.05;
 font-weight:800;
+color:white;
+letter-spacing:-2px;
+text-shadow:0 10px 35px rgba(0,0,0,.35);
 }
 
 .hero h1 span{
-color:#c9a227;
+color:#d4af37;
 display:block;
 }
 
 .hero p{
-margin-top:28px;
-font-size:24px;
-line-height:1.6;
-color:white;
+margin-top:32px;
+font-size:clamp(18px,2vw,24px);
+line-height:1.8;
+color:#f2f2f2;
 max-width:900px;
 margin-left:auto;
 margin-right:auto;
 }
 
-/* DETECTIVE */
+.hero-buttons{
+margin-top:40px;
+display:flex;
+justify-content:center;
+gap:18px;
+flex-wrap:wrap;
+}
+
+.hero-buttons a{
+text-decoration:none;
+padding:16px 28px;
+border-radius:12px;
+font-weight:700;
+transition:.3s;
+}
+
+.primary-btn{
+background:#d4af37;
+color:#111;
+box-shadow:0 12px 28px rgba(212,175,55,.3);
+}
+
+.secondary-btn{
+border:1px solid rgba(255,255,255,.3);
+color:white;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(8px);
+}
+
+.hero-buttons a:hover{
+transform:translateY(-4px);
+}
 
 .investigator{
 position:absolute;
 right:-120px;
 bottom:120px;
-height:590px;
-opacity:.42;
+height:620px;
+opacity:.38;
 
 -webkit-mask-image:
 linear-gradient(to bottom,
 black 0%,
-black 65%,
+black 70%,
 transparent 100%);
 
 mask-image:
 linear-gradient(to bottom,
 black 0%,
-black 65%,
+black 70%,
 transparent 100%);
 }
 
-/* ================= TRUST SECTION ================= */
+/* =========================
+TRUST CARDS
+========================= */
 
 .trust-section{
-background:#f5f6f3;
-padding:60px 40px;
+padding:70px 40px;
+background:#f4f6f3;
 }
 
 .trust-grid{
 display:grid;
 grid-template-columns:repeat(4,1fr);
-gap:28px;
-max-width:1400px;
+gap:30px;
+max-width:1450px;
 margin:auto;
 }
 
 .trust-card{
 background:white;
-padding:35px 30px;
-border-radius:14px;
-border:1px solid #ececec;
-box-shadow:0 8px 20px rgba(0,0,0,.05);
-transition:.3s;
-text-align:left;
+padding:38px 34px;
+border-radius:20px;
+box-shadow:0 14px 40px rgba(0,0,0,.06);
+transition:.35s;
+border:1px solid rgba(0,0,0,.04);
 }
 
 .trust-card:hover{
-transform:translateY(-5px);
+transform:translateY(-10px);
+box-shadow:0 24px 50px rgba(0,0,0,.10);
 }
 
 .trust-icon{
-font-size:42px;
-margin-bottom:20px;
+width:68px;
+height:68px;
+border-radius:18px;
+background:rgba(212,175,55,.12);
+display:flex;
+align-items:center;
+justify-content:center;
+margin-bottom:22px;
+}
+
+.trust-icon svg{
+width:34px;
+height:34px;
+fill:#d4af37;
 }
 
 .trust-card h3{
 font-size:30px;
-color:#1b5e20;
+color:#114d28;
 margin-bottom:12px;
-position:relative;
-}
-
-.trust-card h3::after{
-content:'';
-display:block;
-width:55px;
-height:4px;
-background:#c9a227;
-margin-top:10px;
-border-radius:10px;
 }
 
 .trust-card p{
 font-size:17px;
-line-height:1.7;
-color:#555;
-margin-top:16px;
+line-height:1.8;
+color:#666;
 }
 
-/* ================= SECTION ================= */
+/* =========================
+SECTIONS
+========================= */
 
 .section{
-padding:90px 20px;
+padding:100px 24px;
+}
+
+.section-title{
 text-align:center;
+margin-bottom:70px;
 }
 
-.section h2{
-font-size:46px;
-margin-bottom:50px;
-color:#1b5e20;
+.section-title h2{
+font-size:52px;
+color:#114d28;
+margin-bottom:14px;
 }
 
-/* ================= SERVICES ================= */
+.section-title p{
+font-size:18px;
+color:#666;
+}
+
+/* =========================
+SERVICES
+========================= */
 
 .services{
 display:grid;
 grid-template-columns:repeat(3,1fr);
-gap:28px;
-max-width:1250px;
+gap:30px;
+max-width:1350px;
 margin:auto;
 }
 
 .card{
 background:white;
-padding:35px;
-border-radius:14px;
-text-align:left;
-border:1px solid #ececec;
-box-shadow:0 8px 20px rgba(0,0,0,.05);
+padding:40px 36px;
+border-radius:22px;
+box-shadow:0 12px 35px rgba(0,0,0,.06);
+transition:.35s;
+position:relative;
+overflow:hidden;
+}
+
+.card::before{
+content:'';
+position:absolute;
+left:0;
+top:0;
+width:100%;
+height:5px;
+background:linear-gradient(90deg,#d4af37,#f4df94);
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 24px 50px rgba(0,0,0,.12);
+}
+
+.service-icon{
+width:70px;
+height:70px;
+border-radius:18px;
+background:rgba(17,77,40,.08);
+display:flex;
+align-items:center;
+justify-content:center;
+margin-bottom:24px;
+}
+
+.service-icon svg{
+width:36px;
+height:36px;
+fill:#114d28;
 }
 
 .card h3{
-font-size:27px;
-color:#1b5e20;
-margin-bottom:14px;
+font-size:28px;
+margin-bottom:16px;
+color:#114d28;
 }
 
 .card p{
-line-height:1.7;
 font-size:17px;
-color:#555;
+line-height:1.8;
+color:#666;
 }
 
-/* ================= ABOUT ================= */
+/* =========================
+ABOUT
+========================= */
+
+.about-section{
+background:white;
+}
 
 .about{
-max-width:1050px;
+max-width:1150px;
 margin:auto;
-font-size:22px;
-line-height:1.9;
-color:#444;
 text-align:center;
+font-size:22px;
+line-height:2;
+color:#444;
 }
 
-/* ================= CALLOUT ================= */
+/* =========================
+CALLOUT
+========================= */
 
 .callout{
-background:#1b5e20;
-color:#c9a227;
-padding:35px;
-max-width:900px;
-margin:0 auto 70px;
-border-radius:12px;
-font-size:28px;
-font-weight:700;
+max-width:1050px;
+margin:0 auto;
+background:linear-gradient(135deg,#0c3f21,#145c2d);
+padding:48px;
 text-align:center;
+border-radius:24px;
+box-shadow:0 24px 50px rgba(0,0,0,.18);
 }
 
-/* ================= CONSULT ================= */
+.callout h3{
+font-size:42px;
+color:#d4af37;
+margin-bottom:18px;
+}
+
+.callout p{
+font-size:20px;
+color:white;
+line-height:1.8;
+}
+
+/* =========================
+CONSULTATION
+========================= */
 
 .consult-wrapper{
-padding:80px 20px;
+padding:110px 24px;
 }
 
 .consult-box{
-background:
-linear-gradient(90deg,#06351b,#0b5a26);
-
-max-width:900px;
+max-width:950px;
 margin:auto;
-padding:50px;
-border-radius:14px;
-color:white;
+background:linear-gradient(135deg,#052312,#0f5828);
+padding:60px;
+border-radius:28px;
+box-shadow:0 25px 55px rgba(0,0,0,.2);
 }
 
 .consult-box h2{
-font-size:42px;
-margin-bottom:12px;
-text-align:center;
+font-size:52px;
 color:white;
+text-align:center;
+margin-bottom:14px;
 }
 
 .consult-box p{
 text-align:center;
-margin-bottom:35px;
+color:#dcdcdc;
 font-size:18px;
+margin-bottom:40px;
 }
 
 .consult-box form{
@@ -341,76 +493,118 @@ gap:18px;
 .consult-box input,
 .consult-box textarea,
 .consult-box select{
-padding:16px;
+padding:18px;
 border:none;
-border-radius:8px;
+border-radius:14px;
 font-size:16px;
-width:100%;
+background:white;
 }
 
 .consult-box textarea{
-height:140px;
+height:180px;
 resize:none;
 }
 
 .consult-box button{
-background:#c9a227;
+background:#d4af37;
 color:#111;
 border:none;
-padding:18px;
+padding:20px;
 font-size:18px;
-font-weight:700;
-border-radius:8px;
+font-weight:800;
+border-radius:14px;
 cursor:pointer;
+transition:.3s;
 }
 
-/* ================= SOCIAL ================= */
+.consult-box button:hover{
+transform:translateY(-4px);
+box-shadow:0 18px 30px rgba(212,175,55,.25);
+}
+
+/* =========================
+SOCIAL
+========================= */
+
+.social-section{
+text-align:center;
+padding-bottom:100px;
+}
+
+.social-section h2{
+font-size:46px;
+color:#114d28;
+margin-bottom:30px;
+}
 
 .follow-icons{
 display:flex;
 justify-content:center;
-gap:24px;
-margin-top:30px;
+gap:22px;
 }
 
 .icon-btn{
-background:#1b5e20;
-width:62px;
-height:62px;
+width:72px;
+height:72px;
 border-radius:50%;
+background:#114d28;
 display:flex;
 align-items:center;
 justify-content:center;
+transition:.35s;
+box-shadow:0 12px 24px rgba(0,0,0,.12);
+}
+
+.icon-btn:hover{
+transform:translateY(-8px) scale(1.05);
+background:#d4af37;
 }
 
 .icon-btn svg{
-width:28px;
-height:28px;
+width:32px;
+height:32px;
 fill:white;
 }
 
-/* ================= FOOTER ================= */
+/* =========================
+FOOTER
+========================= */
 
 footer{
-background:
-linear-gradient(90deg,#06351b,#0b5a26,#06351b);
-
-color:white;
+background:linear-gradient(90deg,#052312,#0f5828,#052312);
+padding:60px 20px;
 text-align:center;
-padding:40px 20px;
-font-size:16px;
-line-height:1.8;
-margin-top:80px;
+color:white;
 }
 
-/* ================= MOBILE ================= */
+footer h3{
+font-size:34px;
+margin-bottom:18px;
+}
 
-@media(max-width:1000px){
+footer p{
+font-size:18px;
+line-height:2;
+color:#ececec;
+}
+
+.footer-bottom{
+margin-top:26px;
+opacity:.75;
+font-size:14px;
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media(max-width:1100px){
 
 header{
 grid-template-columns:1fr;
-gap:20px;
+gap:22px;
 text-align:center;
+padding:22px;
 }
 
 .logo{
@@ -421,25 +615,32 @@ justify-content:center;
 justify-content:center;
 }
 
+nav{
+flex-wrap:wrap;
+gap:18px;
+}
+
 .hero{
-height:auto;
-padding:120px 20px;
+min-height:auto;
+padding:140px 20px;
 }
 
 .hero h1{
-font-size:52px;
+font-size:58px;
 }
 
-.hero p{
-font-size:20px;
+.hero-buttons{
+flex-direction:column;
+align-items:center;
 }
 
+.trust-grid,
 .services{
 grid-template-columns:1fr;
 }
 
-.trust-grid{
-grid-template-columns:1fr;
+.consult-box{
+padding:40px 24px;
 }
 
 .investigator{
@@ -450,28 +651,24 @@ display:none;
 
 </style>
 </head>
-
 <body>
 
 <header>
 
 <div class="logo">
-
-<img src="logo.png">
+<img src="logo.png" alt="ICU Investigations LLC">
 
 <div class="logo-text">
 <h2>ICU INVESTIGATIONS LLC</h2>
 <p>DISCREET. DILIGENT. DETERMINED.</p>
 </div>
-
 </div>
 
 <nav>
 <a href="#">Home</a>
-<a href="#">Services</a>
-<a href="#">About</a>
-<a href="#">FAQ</a>
-<a href="#">Contact</a>
+<a href="#services">Services</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
 </nav>
 
 <div class="nav-buttons">
@@ -494,109 +691,143 @@ Answers You Need.
 ICU Investigations LLC provides discreet and professional investigative services for individuals, attorneys, and businesses across Indiana.
 </p>
 
+<div class="hero-buttons">
+<a href="#contact" class="primary-btn">Request Consultation</a>
+<a href="#services" class="secondary-btn">Explore Services</a>
+</div>
+
 </div>
 
 <img src="investigator.png" class="investigator">
 
 </section>
 
-<!-- PREMIUM TRUST SECTION -->
-
 <section class="trust-section">
-
 <div class="trust-grid">
 
 <div class="trust-card">
-<div class="trust-icon">🔒</div>
+<div class="trust-icon">
+<svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 9.5-8 10-4.5-.5-8-5-8-10V6l8-4z"/></svg>
+</div>
 <h3>Confidential</h3>
-<p>Your privacy is our priority.</p>
+<p>Your privacy is our priority. Every case is handled with strict confidentiality and professionalism.</p>
 </div>
 
 <div class="trust-card">
-<div class="trust-icon">🔍</div>
+<div class="trust-icon">
+<svg viewBox="0 0 24 24"><path d="M10 2a8 8 0 105.3 14l4.7 4.7 1.4-1.4-4.7-4.7A8 8 0 0010 2z"/></svg>
+</div>
 <h3>Experienced</h3>
-<p>Thorough investigations. Reliable results.</p>
+<p>Thorough investigations. Reliable results. Every detail is approached strategically and professionally.</p>
 </div>
 
 <div class="trust-card">
-<div class="trust-icon">🕵️</div>
+<div class="trust-icon">
+<svg viewBox="0 0 24 24"><path d="M12 2C7 2 3 6 3 11c0 7 9 11 9 11s9-4 9-11c0-5-4-9-9-9z"/></svg>
+</div>
 <h3>Discreet</h3>
-<p>We operate quietly so you can move forward.</p>
+<p>We operate quietly and professionally so you can move forward with clarity and confidence.</p>
 </div>
 
 <div class="trust-card">
-<div class="trust-icon">📋</div>
+<div class="trust-icon">
+<svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/></svg>
+</div>
 <h3>Results Driven</h3>
-<p>Focused on facts. Committed to truth.</p>
+<p>Focused on facts. Committed to truth. Delivering accurate findings and dependable outcomes.</p>
 </div>
 
 </div>
-
 </section>
 
-<section class="section">
+<section class="section" id="services">
 
+<div class="section-title">
 <h2>Our Services</h2>
+<p>Professional investigative solutions tailored to your needs.</p>
+</div>
 
 <div class="services">
 
 <div class="card">
+<div class="service-icon">
+<svg viewBox="0 0 24 24"><path d="M10 2a8 8 0 105.3 14l4.7 4.7 1.4-1.4-4.7-4.7A8 8 0 0010 2z"/></svg>
+</div>
 <h3>Surveillance</h3>
-<p>Discreet monitoring and detailed reporting to uncover the truth.</p>
+<p>Discreet monitoring and detailed reporting designed to uncover the truth with professionalism and precision.</p>
 </div>
 
 <div class="card">
+<div class="service-icon">
+<svg viewBox="0 0 24 24"><path d="M6 2h12v20H6z"/></svg>
+</div>
 <h3>Background Investigations</h3>
-<p>In-depth inquiries to verify information and uncover critical details.</p>
+<p>Comprehensive background investigations that verify information and uncover critical details.</p>
 </div>
 
 <div class="card">
+<div class="service-icon">
+<svg viewBox="0 0 24 24"><path d="M12 21s-8-4.5-8-10a5 5 0 0110 0 5 5 0 0110 0c0 5.5-8 10-8 10z"/></svg>
+</div>
 <h3>Infidelity Investigations</h3>
-<p>Find the truth with compassion, discretion, and professionalism.</p>
+<p>Professional relationship investigations handled with compassion, discretion, and confidentiality.</p>
 </div>
 
 <div class="card">
+<div class="service-icon">
+<svg viewBox="0 0 24 24"><path d="M3 3h18v18H3z"/></svg>
+</div>
 <h3>Legal Support Investigations</h3>
-<p>Gathering evidence and information to support your legal case.</p>
+<p>Evidence gathering and investigative support for attorneys, legal professionals, and litigation matters.</p>
 </div>
 
 <div class="card">
+<div class="service-icon">
+<svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/></svg>
+</div>
 <h3>Business Investigations</h3>
-<p>Protect your business with thorough investigations into fraud and misconduct.</p>
+<p>Protect your company through investigations involving fraud, misconduct, and internal concerns.</p>
 </div>
 
 <div class="card">
+<div class="service-icon">
+<svg viewBox="0 0 24 24"><path d="M12 2C7 2 4 6 4 10c0 7 8 12 8 12s8-5 8-12c0-4-3-8-8-8z"/></svg>
+</div>
 <h3>Locates & Skip Tracing</h3>
-<p>Find people, assets, and information when others come up empty.</p>
+<p>Locate individuals, assets, and hard-to-find information using strategic investigative methods.</p>
 </div>
 
+</div>
+</section>
+
+<section class="section about-section" id="about">
+
+<div class="section-title">
+<h2>About ICU Investigations LLC</h2>
+</div>
+
+<div class="about">
+ICU Investigations LLC is a premier minority and woman-owned firm dedicated to providing comprehensive private investigation services. Our expertise covers background checks, surveillance, business and relationship investigations, and more. All services come with a guaranteed commitment to professionalism and confidentiality, ensuring that each case is handled with integrity and tailored to meet the unique needs of our clients.
 </div>
 
 </section>
 
 <section class="section">
-
-<h2>About ICU Investigations LLC</h2>
-
-<div class="about">
-
-ICU Investigations LLC is a premier minority and woman-owned firm dedicated to providing comprehensive private investigation services. Our expertise covers background checks, surveillance, business and relationship investigations, and more. All services come with a guaranteed commitment to professionalism and confidentiality, ensuring that each case is handled with integrity and tailored to meet the unique needs of our clients.
-
+<div class="callout">
+<h3>Need Answers?</h3>
+<p>
+Don’t see a service you need? Request a free consultation today. ICU Investigations LLC is licensed and insured with the State of Indiana.
+</p>
 </div>
-
 </section>
 
-<div class="callout">
-Don’t see a service you need? Request a free consultation.
-</div>
-
-<section class="consult-wrapper">
+<section class="consult-wrapper" id="contact">
 
 <div class="consult-box">
 
 <h2>Request Your Free Consultation</h2>
 
-<p>Tell us about your situation. We’ll get back to you promptly.</p>
+<p>Tell us about your situation. We’ll respond promptly and confidentially.</p>
 
 <form>
 
@@ -622,25 +853,40 @@ Don’t see a service you need? Request a free consultation.
 
 </section>
 
+<section class="social-section">
+
+<h2>Follow Us</h2>
+
+<div class="follow-icons">
+
+<a href="#" class="icon-btn">
+<svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 10-11.5 9.9v-7h-2v-3h2V9c0-2 1.2-3 3-3 .9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.6-1.3 1.2v1.7h2.2l-.4 3h-1.8v7A10 10 0 0022 12"/></svg>
+</a>
+
+<a href="#" class="icon-btn">
+<svg viewBox="0 0 24 24"><path d="M7 2C4 2 2 4 2 7v10c0 3 2 5 5 5h10c3 0 5-2 5-5V7c0-3-2-5-5-5H7zm5 5a5 5 0 110 10 5 5 0 010-10z"/></svg>
+</a>
+
+<a href="#" class="icon-btn">
+<svg viewBox="0 0 24 24"><path d="M4 3C3 3 2 4 2 5v14c0 1 1 2 2 2h16c1 0 2-1 2-2V5c0-1-1-2-2-2H4zm5 16H6V9h3v10zm11 0h-3v-5c0-1-.5-2-1.5-2S14 13 14 14v5h-3V9h3v1c.5-.8 1.5-1.5 3-1.5 2 0 3 1.5 3 4V19z"/></svg>
+</a>
+
+</div>
+
+</section>
+
 <footer>
 
-<div style="font-size:28px;font-weight:700;margin-bottom:14px;">
-ICU Investigations LLC
-</div>
+<h3>ICU Investigations LLC</h3>
 
-<div style="font-size:18px;line-height:2;">
-
+<p>
 📍 Indianapolis, Indiana<br>
-
 📞 317-426-6002<br>
-
 ✉ icuinvestigationsicu@gmail.com<br>
+✔ Licensed and Insured with the State of Indiana
+</p>
 
-✔ Insured and Licensed with the State of Indiana
-
-</div>
-
-<div style="margin-top:22px;font-size:15px;opacity:.8;">
+<div class="footer-bottom">
 © 2026 ICU Investigations LLC. All rights reserved.
 </div>
 
@@ -648,3 +894,12 @@ ICU Investigations LLC
 
 </body>
 </html>
+```
+
+Upload/confirm these files are in your GitHub repo root:
+
+* `logo.png`
+* `skyline.jpg`
+* `investigator.png`
+
+Then commit changes and redeploy on Vercel.
