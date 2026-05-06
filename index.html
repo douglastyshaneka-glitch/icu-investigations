@@ -12,17 +12,17 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: #f6f6f3;
-  color: #222;
+  background: #f5f6f3;
+  color: #1a1a1a;
 }
 
-h1, h2, h3 {
-  margin: 10px 0;
+h1, h2, h3, p {
+  text-align: center;
 }
 
 /* HEADER */
 header {
-  background: linear-gradient(to right, #0b3d1f, #1b5e20);
+  background: linear-gradient(90deg, #0b3d1f, #1b5e20);
   color: white;
   padding: 15px 40px;
   display: flex;
@@ -44,12 +44,11 @@ nav a {
   color: white;
   margin: 0 12px;
   text-decoration: none;
-  font-weight: 500;
 }
 
 .nav-buttons button {
   margin-left: 10px;
-  padding: 10px 16px;
+  padding: 10px 18px;
   border-radius: 6px;
   border: none;
   cursor: pointer;
@@ -66,94 +65,92 @@ nav a {
 
 /* HERO */
 .hero {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 80px 5%;
-  background: linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)),
-  url('skyline.jpg');
+  position: relative;
+  padding: 120px 20px;
+  background:
+    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+    url('skyline.jpg');
   background-size: cover;
-}
-
-.hero-text {
-  max-width: 600px;
-}
-
-.hero-text small {
-  color: #c9a227;
-  font-weight: bold;
+  background-position: center;
+  color: white;
+  overflow: hidden;
 }
 
 .hero h1 {
-  font-size: 48px;
+  font-size: 52px;
 }
 
 .hero span {
   color: #c9a227;
 }
 
-.hero-buttons button {
-  margin-right: 10px;
-  padding: 14px 20px;
-  border-radius: 6px;
-  border: none;
+.hero p {
+  max-width: 700px;
+  margin: auto;
+  line-height: 1.6;
 }
 
-.hero img {
-  width: 380px;
+/* DETECTIVE IMAGE */
+.investigator {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 520px;
+  opacity: 0.85;
+
+  mix-blend-mode: multiply;
+
+  -webkit-mask-image: linear-gradient(to top, transparent 0%, black 40%);
+  mask-image: linear-gradient(to top, transparent 0%, black 40%);
 }
 
 /* TRUST BAR */
 .trust-bar {
   display: grid;
   grid-template-columns: repeat(4,1fr);
+  padding: 30px;
   background: #f0efe9;
-  padding: 25px;
   text-align: center;
 }
 
-.trust-bar div {
-  font-size: 14px;
+/* SECTION */
+.section {
+  padding: 70px 20px;
 }
 
 /* SERVICES */
-.section {
-  padding: 60px 5%;
-}
-
 .services {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 25px;
 }
 
 .card {
   background: white;
-  padding: 25px;
+  padding: 30px;
   border-radius: 10px;
   border: 1px solid #eee;
+  text-align: left;
 }
 
 .card h3 {
   color: #1b5e20;
 }
 
-/* ABOUT + FORM */
+.icon {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+/* CONTACT SPLIT */
 .split {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
 }
 
-.notice {
-  background: #fff4e0;
-  padding: 15px;
-  border-radius: 8px;
-  margin-top: 20px;
-}
-
 .form-box {
-  background: linear-gradient(to right, #0b3d1f, #1b5e20);
+  background: linear-gradient(90deg, #0b3d1f, #1b5e20);
   color: white;
   padding: 30px;
   border-radius: 10px;
@@ -175,28 +172,19 @@ nav a {
 }
 
 /* FAQ */
-.faq {
-  padding: 60px 5%;
-}
-
 .faq-item {
   background: white;
-  margin-bottom: 10px;
   padding: 15px;
+  margin: 10px 0;
   cursor: pointer;
-  border-radius: 6px;
 }
 
 /* FOOTER */
 footer {
-  background: linear-gradient(to right, #0b3d1f, #1b5e20);
+  background: linear-gradient(90deg, #0b3d1f, #1b5e20);
   color: white;
   padding: 40px;
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
+  text-align: center;
 }
 
 </style>
@@ -230,27 +218,19 @@ footer {
 
 <section class="hero">
 
-  <div class="hero-text">
-    <small>TRUTH. CLARITY. RESOLUTION.</small>
+  <h3>TRUTH. CLARITY. RESOLUTION.</h3>
 
-```
-<h1>Answers You Need.<br>
-<span>Results You Can Trust.</span></h1>
+  <h1>
+    Answers You Need.<br>
+    <span>Results You Can Trust.</span>
+  </h1>
 
-<p>
-  ICU Investigations provides discreet and professional investigative services for individuals,
-  attorneys, and businesses across Indiana.
-</p>
+  <p>
+    ICU Investigations provides discreet and professional investigative services
+    for individuals, attorneys, and businesses across Indiana.
+  </p>
 
-<div class="hero-buttons">
-  <button class="cta">Free Consultation</button>
-  <button class="call">(317) 426-6002</button>
-</div>
-```
-
-  </div>
-
-  <img src="investigator.png">
+  <img src="investigator.png" class="investigator">
 
 </section>
 
@@ -265,12 +245,45 @@ footer {
   <h2>Our Services</h2>
 
   <div class="services">
-    <div class="card"><h3>Surveillance</h3><p>Discreet monitoring.</p></div>
-    <div class="card"><h3>Background Investigations</h3><p>Verify information.</p></div>
-    <div class="card"><h3>Infidelity Investigations</h3><p>Find truth.</p></div>
-    <div class="card"><h3>Legal Support</h3><p>Evidence support.</p></div>
-    <div class="card"><h3>Business Investigations</h3><p>Protect business.</p></div>
-    <div class="card"><h3>Missing Persons</h3><p>Locate individuals.</p></div>
+
+```
+<div class="card">
+  <div class="icon">🕵️</div>
+  <h3>Surveillance</h3>
+  <p>Discreet monitoring and detailed reporting to uncover the truth.</p>
+</div>
+
+<div class="card">
+  <div class="icon">📋</div>
+  <h3>Background Investigations</h3>
+  <p>In-depth inquiries to verify information and uncover critical details.</p>
+</div>
+
+<div class="card">
+  <div class="icon">💔</div>
+  <h3>Infidelity Investigations</h3>
+  <p>Find the truth with compassion, discretion, and professionalism.</p>
+</div>
+
+<div class="card">
+  <div class="icon">⚖️</div>
+  <h3>Legal Support Investigations</h3>
+  <p>Gathering evidence and information to support your legal case.</p>
+</div>
+
+<div class="card">
+  <div class="icon">🏢</div>
+  <h3>Business Investigations</h3>
+  <p>Protect your business with thorough investigations into fraud and misconduct.</p>
+</div>
+
+<div class="card">
+  <div class="icon">📍</div>
+  <h3>Locates & Skip Tracing</h3>
+  <p>Find people, assets, and information when others come up empty.</p>
+</div>
+```
+
   </div>
 </section>
 
@@ -278,15 +291,10 @@ footer {
 
   <div>
     <h2>About ICU Investigations</h2>
-    <p>We provide accurate, reliable investigative services with integrity, discretion, and determination.</p>
-
-```
-<div class="notice">
-  <strong>Important Notice:</strong><br>
-  ICU Investigations is not a law firm and does not provide legal advice.
-</div>
-```
-
+    <p>
+      At ICU Investigations, we believe the truth matters. Our mission is to provide
+      accurate, reliable, and timely information so you can make informed decisions.
+    </p>
   </div>
 
   <div class="form-box">
@@ -299,10 +307,8 @@ footer {
   <input placeholder="Email Address">
   <select>
     <option>What can we help you with?</option>
-    <option>Surveillance</option>
-    <option>Infidelity</option>
   </select>
-  <textarea placeholder="Details"></textarea>
+  <textarea placeholder="Tell us about your case"></textarea>
   <button>Send Message</button>
 </form>
 ```
@@ -311,40 +317,17 @@ footer {
 
 </section>
 
-<section class="faq">
+<section class="section">
   <h2>Frequently Asked Questions</h2>
 
   <div class="faq-item">How confidential are your services?</div>
   <div class="faq-item">How much does an investigation cost?</div>
-  <div class="faq-item">How quickly can you start?</div>
-
+  <div class="faq-item">How quickly can you begin?</div>
 </section>
 
 <footer>
-
-  <div class="footer-grid">
-    <div>
-      <strong>ICU Investigations</strong><br>
-      Indianapolis, Indiana
-    </div>
-
-```
-<div>
-  <strong>Contact</strong><br>
-  317-426-6002<br>
-  icu@investigationsicu.com
-</div>
-
-<div>
-  <strong>Quick Links</strong><br>
-  Home<br>
-  Services<br>
-  FAQ
-</div>
-```
-
-  </div>
-
+  ICU Investigations | Indianapolis, Indiana<br>
+  317-426-6002 | icu@investigationsicu.com
 </footer>
 
 </body>
