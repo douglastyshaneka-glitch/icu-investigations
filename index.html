@@ -643,6 +643,199 @@ ICU Investigations LLC
 <div style="margin-top:22px;font-size:15px;opacity:.8;">
 © 2026 ICU Investigations LLC. All rights reserved.
 </div>
+```html
+<!-- ================= FAQ SECTION ================= -->
+
+<section class="faq-section">
+
+<h2 class="faq-title">Frequently Asked Questions</h2>
+
+<div class="faq-container">
+
+<div class="faq-item">
+
+<button class="faq-question">
+<span>1. Are your investigations confidential?</span>
+<span class="faq-icon">+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+Yes. All investigations are handled with the highest level of confidentiality and professionalism. Client information, evidence, and case details are kept private and secure at all times.
+</p>
+</div>
+
+</div>
+
+<div class="faq-item">
+
+<button class="faq-question">
+<span>2. What types of cases do you investigate?</span>
+<span class="faq-icon">+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+We provide a variety of investigative services including surveillance, infidelity investigations, background checks, insurance fraud investigations, missing persons cases, and other private investigative services tailored to your needs.
+</p>
+</div>
+
+</div>
+
+<div class="faq-item">
+
+<button class="faq-question">
+<span>3. How much does a private investigator cost?</span>
+<span class="faq-icon">+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+Pricing depends on the type of investigation, complexity of the case, and time required. We provide transparent pricing and customized quotes so clients know exactly what to expect before services begin.
+</p>
+</div>
+
+</div>
+
+<div class="faq-item">
+
+<button class="faq-question">
+<span>4. Is your agency licensed and insured?</span>
+<span class="faq-icon">+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+Yes. I C U Investigations is licensed and insured in the State of Indiana, providing clients with professional and legally compliant investigative services.
+</p>
+</div>
+
+</div>
+
+<div class="faq-item">
+
+<button class="faq-question">
+<span>5. How do I get started with an investigation?</span>
+<span class="faq-icon">+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+Getting started is simple. Contact us for a confidential consultation where we’ll discuss your situation, answer questions, and determine the best investigative approach for your case.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+/* ================= FAQ ACCORDION ================= */
+
+.faq-section{
+padding:90px 20px;
+background:#f5f6f3;
+}
+
+.faq-title{
+font-size:46px;
+margin-bottom:50px;
+color:#1b5e20;
+text-align:center;
+}
+
+.faq-container{
+max-width:1100px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.faq-item{
+background:white;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,.06);
+border:1px solid rgba(0,0,0,.04);
+transition:.3s;
+}
+
+.faq-item:hover{
+transform:translateY(-4px);
+}
+
+.faq-question{
+width:100%;
+background:white;
+border:none;
+padding:28px 30px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+cursor:pointer;
+font-size:24px;
+font-weight:700;
+color:#114d28;
+text-align:left;
+transition:.3s;
+}
+
+.faq-question:hover{
+background:#fafafa;
+}
+
+.faq-icon{
+font-size:34px;
+color:#c9a227;
+transition:.3s;
+}
+
+.faq-answer{
+max-height:0;
+overflow:hidden;
+transition:max-height .4s ease;
+background:#fff;
+}
+
+.faq-answer p{
+padding:0 30px 30px;
+font-size:17px;
+line-height:1.9;
+color:#555;
+}
+
+.faq-item.active .faq-answer{
+max-height:400px;
+}
+
+.faq-item.active .faq-icon{
+transform:rotate(45deg);
+}
+
+</style>
+
+<script>
+
+const faqItems = document.querySelectorAll('.faq-item');
+
+faqItems.forEach(item => {
+
+const question = item.querySelector('.faq-question');
+
+question.addEventListener('click', () => {
+
+item.classList.toggle('active');
+
+});
+
+});
+
+</script>
+```
 
 </footer>
 
