@@ -170,16 +170,29 @@ margin-right:auto;
 .investigator{
 position:absolute;
 
-/* much closer to edge */
-right:-35px;
+/* push farther toward edge */
+right:-70px;
 
-/* slightly lower */
-bottom:145px;
+/* lower slightly more */
+bottom:120px;
 
-/* same size */
+/* maintain scale */
 height:590px;
 
 opacity:.42;
+
+-webkit-mask-image:
+linear-gradient(to bottom,
+black 0%,
+black 65%,
+transparent 100%);
+
+mask-image:
+linear-gradient(to bottom,
+black 0%,
+black 65%,
+transparent 100%);
+}
 
 -webkit-mask-image:
 linear-gradient(to bottom,
