@@ -6,13 +6,17 @@
 <title>ICU Investigations LLC</title>
 
 <style>
-
+  
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
 }
 
+html{
+scroll-behavior:smooth;
+}
+  
 body{
 font-family:'Segoe UI',sans-serif;
 background:#f5f6f3;
@@ -94,6 +98,30 @@ cursor:pointer;
 font-size:15px;
 }
 
+.cta-btn{
+background:#c9a227;
+color:#111;
+padding:12px 20px;
+border-radius:6px;
+font-weight:700;
+text-decoration:none;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+}
+
+.call-btn{
+background:#2f8f3a;
+color:white;
+padding:12px 20px;
+border-radius:6px;
+font-weight:700;
+text-decoration:none;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+}
+  
 .cta{
 background:#c9a227;
 color:#111;
@@ -467,21 +495,23 @@ display:none;
 </div>
 
 <nav>
-<a href="#">Home</a>
-<a href="#">Services</a>
-<a href="#">About</a>
-<a href="#">FAQ</a>
-<a href="#">Contact</a>
+<a href="#home">Home</a>
+<a href="#services">Services</a>
+<a href="#about">About</a>
+<a href="#faq">FAQ</a>
+<a href="#contact">Contact</a>
 </nav>
 
 <div class="nav-buttons">
-<button class="cta">Free Consultation</button>
-<button class="call">317-426-6002</button>
+<a href="#contact" class="cta-btn">Free Consultation</a>
+<a href="tel:3174266002" class="call-btn">
+317-426-6002
+</a>
 </div>
 
 </header>
 
-<section class="hero">
+<section class="hero" id="home">
 
 <div class="hero-content">
 
@@ -534,7 +564,7 @@ ICU Investigations LLC provides discreet and professional investigative services
 
 </section>
 
-<section class="section">
+<section class="section" id="services">
 
 <h2>Our Services</h2>
 
@@ -574,7 +604,7 @@ ICU Investigations LLC provides discreet and professional investigative services
 
 </section>
 
-<section class="section">
+<section class="section" id="about">
 
 <h2>About ICU Investigations LLC</h2>
 
@@ -590,7 +620,7 @@ ICU Investigations LLC is a premier minority and woman-owned firm dedicated to p
 Don’t see a service you need? Request a free consultation.
 </div>
 
-<section class="consult-wrapper">
+<section class="consult-wrapper" id="contact">
 
 <div class="consult-box">
 
@@ -598,9 +628,9 @@ Don’t see a service you need? Request a free consultation.
 
 <p>Tell us about your situation. We’ll get back to you promptly.</p>
 
-<form>
+<form action="https://formspree.io/f/meenzqzz" method="POST">
 
-<select>
+<select name="referral_source">
 <option>How did you hear about us?</option>
 <option>Google</option>
 <option>Facebook</option>
@@ -608,11 +638,11 @@ Don’t see a service you need? Request a free consultation.
 <option>Referral</option>
 </select>
 
-<input type="text" placeholder="Full Name">
-<input type="text" placeholder="Phone Number">
-<input type="email" placeholder="Email Address">
+<input type="text" name="name" placeholder="Full Name">
+<input type="text" name="phone" placeholder="Phone Number">
+<input type="email" name="email" placeholder="Email Address">
 
-<textarea placeholder="Tell us about your case"></textarea>
+<textarea name="message" placeholder="Tell us about your case"></textarea>
 
 <button type="submit">Send Message</button>
 
@@ -623,7 +653,7 @@ Don’t see a service you need? Request a free consultation.
 </section>
 <!-- ================= FAQ SECTION ================= -->
 
-<section class="faq-section">
+<section class="faq-section" id="faq">
 
 <h2 class="faq-title">Frequently Asked Questions</h2>
 
@@ -805,9 +835,19 @@ const question = item.querySelector('.faq-question');
 
 question.addEventListener('click', () => {
 
+faqItems.forEach(other => {
+if(other !== item){
+other.classList.remove('active');
+}
+});
+
 item.classList.toggle('active');
 
 });
+  
+});
+
+</script>
 
 });
 
