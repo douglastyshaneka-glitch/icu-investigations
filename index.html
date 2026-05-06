@@ -7,18 +7,15 @@
 <title>ICU Investigations</title>
 
 <style>
-  
+
+/* GENERAL */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   background: #f4f8f4;
   color: #1a1a1a;
 }
-.hero-content {
-  max-width: 600px;
-  text-align: left;
-  margin-left: 5%;
-}
+
 /* HEADER */
 header {
   background: #1b5e20;
@@ -51,16 +48,22 @@ header img {
   color: black;
 }
 
-/* HERO */
+/* HERO SECTION */
 .hero {
   position: relative;
   background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
-url('skyline.jpg');
+  url('skyline.jpg');
   background-size: cover;
   background-position: center;
-  padding: 180px 20px;
+  padding: 160px 20px;
   color: white;
   overflow: hidden;
+}
+
+/* HERO TEXT */
+.hero-content {
+  max-width: 600px;
+  margin-left: 5%;
 }
 
 .hero h1 {
@@ -82,13 +85,25 @@ url('skyline.jpg');
   cursor: pointer;
 }
 
-/* DETECTIVE IMAGE */
-.detective {
+/* INVESTIGATOR (RIGHT SIDE) */
+.investigator {
   position: absolute;
   bottom: 0;
   right: 5%;
-  height: 300px;
+  height: 420px;
+  width: auto;
   opacity: 0.9;
+  pointer-events: none;
+
+  /* Blend into skyline */
+  mix-blend-mode: multiply;
+
+  /* Fade bottom */
+  -webkit-mask-image: linear-gradient(to top, transparent 0%, black 35%);
+  mask-image: linear-gradient(to top, transparent 0%, black 35%);
+
+  /* Depth */
+  filter: drop-shadow(0px 0px 25px rgba(0,0,0,0.6));
 }
 
 /* SECTIONS */
@@ -134,45 +149,9 @@ footer {
   padding: 30px;
   text-align: center;
 }
-  /* HERO must allow positioning */
-.hero {
-  position: relative;
-  overflow: hidden;
-}
 
-/* Investigator overlay */
-.investigator {
-  position: absolute;
-  bottom: 0;
-  right: 5%;
-
-  height: 420px;
-  width: auto;
-
-  opacity: 0.9;
-  pointer-events: none;
-
-  /* Blend into skyline */
-  mix-blend-mode: multiply;
-
-  /* Fade bottom into background */
-  -webkit-mask-image: linear-gradient(to top, transparent 0%, black 35%);
-  mask-image: linear-gradient(to top, transparent 0%, black 35%);
-
-  /* Soft shadow for depth */
-  filter: drop-shadow(0px 0px 25px rgba(0,0,0,0.6));
-}
 </style>
-.investigator {
-  position: absolute;
-  bottom: 0;
-  right: 5%;
-  height: 420px;
-  max-width: 40%;
-  object-fit: contain;
-  opacity: 0.95;
-  filter: drop-shadow(0px 0px 25px rgba(0,0,0,0.6));
-}
+
 </head>
 
 <body>
@@ -186,13 +165,20 @@ footer {
 </header>
 
 <section class="hero">
-  <img src="investigator.png" class="investigator">
 
   <div class="hero-content">
     <h1>Answers You Need.<br><span>Results You Can Trust.</span></h1>
     <p>Discreet, professional investigative services in Indianapolis</p>
-    <button>Request Free Consultation</button>
+
+```
+<button onclick="document.getElementById('contact').scrollIntoView()">
+  Request Free Consultation
+</button>
+```
+
   </div>
+
+  <img src="investigator.png" class="investigator">
 
 </section>
 
