@@ -24,10 +24,13 @@ header {
   align-items: center;
 }
 
-/* LOGO BLEND */
+.logo {
+  display:flex;
+  align-items:center;
+}
+
 .logo img {
-  height: 55px;
-  mix-blend-mode: lighten;
+  height: 60px;
 }
 
 /* NAV */
@@ -35,6 +38,7 @@ nav a {
   color: white;
   margin: 0 12px;
   text-decoration: none;
+  font-weight: 500;
 }
 
 .nav-buttons button {
@@ -43,10 +47,17 @@ nav a {
   border-radius: 6px;
   border: none;
   cursor: pointer;
+  font-weight: 600;
 }
 
-.cta { background:#c9a227; }
-.call { background:#2e7d32; color:white; }
+.cta {
+  background:#c9a227;
+}
+
+.call {
+  background:#2e7d32;
+  color:white;
+}
 
 /* HERO */
 .hero {
@@ -59,26 +70,35 @@ nav a {
   background-position: center;
   color: white;
   text-align:center;
+  overflow:hidden;
 }
 
-.hero h1 { font-size:60px; }
-.hero span { color:#c9a227; }
+.hero h1 {
+  font-size:60px;
+  line-height:1.2;
+}
+
+.hero span {
+  color:#c9a227;
+}
 
 .hero p {
   max-width:800px;
   margin:auto;
   font-size:20px;
+  line-height:1.6;
 }
 
 /* DETECTIVE */
 .investigator {
   position:absolute;
-  bottom:40px; /* moved up */
+  bottom:45px;
   right:-20px;
   height:540px;
-  opacity:0.65;
+  opacity:0.60;
 
-  -webkit-mask-image: linear-gradient(to top, transparent 0%, black 60%);
+  -webkit-mask-image: linear-gradient(to top, transparent 0%, black 65%);
+  mask-image: linear-gradient(to top, transparent 0%, black 65%);
 }
 
 /* TRUST BAR */
@@ -86,12 +106,13 @@ nav a {
   display:grid;
   grid-template-columns:repeat(4,1fr);
   background:#f0efe9;
-  padding:30px;
+  padding:35px 20px;
   text-align:center;
 }
 
 .trust-bar h4 {
   color:#1b5e20;
+  margin-bottom:10px;
   position:relative;
 }
 
@@ -101,13 +122,23 @@ nav a {
   width:40px;
   height:3px;
   background:#c9a227;
-  margin:8px auto;
+  margin:8px auto 0;
 }
 
-/* SECTION */
+.trust-bar p {
+  font-size:14px;
+  color:#555;
+}
+
+/* SECTIONS */
 .section {
   padding:70px 20px;
   text-align:center;
+}
+
+.section h2 {
+  font-size:36px;
+  margin-bottom:40px;
 }
 
 /* SERVICES */
@@ -121,17 +152,30 @@ nav a {
 
 .card {
   background:white;
-  padding:25px;
+  padding:30px;
   border-radius:10px;
   border:1px solid #eee;
   text-align:left;
+  box-shadow:0 4px 10px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+  color:#1b5e20;
+}
+
+.icon {
+  width:40px;
+  height:40px;
+  fill:#c9a227;
+  margin-bottom:10px;
 }
 
 /* ABOUT */
 .about {
   max-width:900px;
   margin:auto;
-  line-height:1.6;
+  line-height:1.8;
+  font-size:18px;
 }
 
 /* CALLOUT */
@@ -142,7 +186,9 @@ nav a {
   border-radius:10px;
   max-width:700px;
   margin:40px auto;
+  font-weight:600;
   text-align:center;
+  font-size:20px;
 }
 
 /* CONSULT */
@@ -165,9 +211,10 @@ nav a {
 .consult-box textarea,
 .consult-box select {
   width:100%;
-  padding:12px;
+  padding:14px;
   border-radius:6px;
   border:none;
+  font-size:15px;
 }
 
 .consult-box button {
@@ -176,6 +223,7 @@ nav a {
   border:none;
   font-weight:bold;
   border-radius:6px;
+  cursor:pointer;
 }
 
 /* SOCIAL */
@@ -189,6 +237,9 @@ nav a {
   background:#1b5e20;
   padding:14px;
   border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
 .icon-btn svg {
@@ -203,6 +254,7 @@ footer {
   color:white;
   text-align:center;
   padding:30px;
+  font-size:15px;
 }
 </style>
 
@@ -211,8 +263,9 @@ footer {
 <body>
 
 <header>
+
 <div class="logo">
-<img src="logo.jpg">
+<img src="logo.png" alt="ICU Investigations LLC Logo">
 </div>
 
 <nav>
@@ -226,39 +279,96 @@ footer {
 <button class="cta">Free Consultation</button>
 <button class="call">317-426-6002</button>
 </div>
+
 </header>
 
 <section class="hero">
-<h1>Answers You Need.<br><span>Results You Can Trust.</span></h1>
-<p>ICU Investigations LLC provides discreet and professional investigative services for individuals, attorneys, and businesses across Indiana.</p>
+
+<h1>
+Answers You Need.<br>
+<span>Results You Can Trust.</span>
+</h1>
+
+<p>
+ICU Investigations LLC provides discreet and professional investigative services for individuals, attorneys, and businesses across Indiana.
+</p>
+
 <img src="investigator.png" class="investigator">
+
 </section>
 
 <div class="trust-bar">
-<div><h4>Confidential</h4></div>
-<div><h4>Experienced</h4></div>
-<div><h4>Discreet</h4></div>
-<div><h4>Results Driven</h4></div>
+
+<div>
+<h4>Confidential</h4>
+<p>Your privacy is our priority.</p>
+</div>
+
+<div>
+<h4>Experienced</h4>
+<p>Thorough investigations. Reliable results.</p>
+</div>
+
+<div>
+<h4>Discreet</h4>
+<p>We operate quietly so you can move forward.</p>
+</div>
+
+<div>
+<h4>Results Driven</h4>
+<p>Focused on facts. Committed to truth.</p>
+</div>
+
 </div>
 
 <section class="section">
+
 <h2>Our Services</h2>
 
 <div class="services">
-<div class="card"><h3>Surveillance</h3></div>
-<div class="card"><h3>Background Investigations</h3></div>
-<div class="card"><h3>Infidelity Investigations</h3></div>
-<div class="card"><h3>Legal Support Investigations</h3></div>
-<div class="card"><h3>Business Investigations</h3></div>
-<div class="card"><h3>Locates & Skip Tracing</h3></div>
+
+<div class="card">
+<h3>Surveillance</h3>
+<p>Discreet monitoring and detailed reporting to uncover the truth.</p>
 </div>
+
+<div class="card">
+<h3>Background Investigations</h3>
+<p>In-depth inquiries to verify information and uncover critical details.</p>
+</div>
+
+<div class="card">
+<h3>Infidelity Investigations</h3>
+<p>Find the truth with compassion, discretion, and professionalism.</p>
+</div>
+
+<div class="card">
+<h3>Legal Support Investigations</h3>
+<p>Gathering evidence and information to support your legal case.</p>
+</div>
+
+<div class="card">
+<h3>Business Investigations</h3>
+<p>Protect your business with thorough investigations into fraud and misconduct.</p>
+</div>
+
+<div class="card">
+<h3>Locates & Skip Tracing</h3>
+<p>Find people, assets, and information when others come up empty.</p>
+</div>
+
+</div>
+
 </section>
 
 <section class="section">
+
 <h2>About ICU Investigations LLC</h2>
+
 <div class="about">
-ICU Investigations LLC is a premier minority and woman-owned firm dedicated to providing comprehensive private investigation services...
+ICU Investigations LLC is a premier minority and woman-owned firm dedicated to providing comprehensive private investigation services. Our expertise covers background checks, surveillance, business and relationship investigations, and more. All services come with a guaranteed commitment to professionalism and confidentiality, ensuring that each case is handled with integrity and tailored to meet the unique needs of our clients.
 </div>
+
 </section>
 
 <div class="callout">
@@ -266,9 +376,11 @@ Don’t see a service you need? Request a free consultation.
 </div>
 
 <section class="section">
+
 <h2>Request Your Free Consultation</h2>
 
 <div class="consult-box">
+
 <form>
 
 <select>
@@ -281,26 +393,42 @@ Don’t see a service you need? Request a free consultation.
 <input placeholder="Full Name">
 <input placeholder="Phone Number">
 <input placeholder="Email Address">
+
 <textarea placeholder="Tell us about your case"></textarea>
+
 <button>Send Message</button>
 
 </form>
+
 </div>
+
 </section>
 
 <section class="section">
+
 <h2>Follow Us</h2>
 
 <div class="follow-icons">
-<a href="#" class="icon-btn"><svg viewBox="0 0 24 24"><path d="M22 12"/></svg></a>
-<a href="#" class="icon-btn"><svg viewBox="0 0 24 24"><path d="M7 2"/></svg></a>
-<a href="#" class="icon-btn"><svg viewBox="0 0 24 24"><path d="M4 3"/></svg></a>
+
+<a href="#" class="icon-btn">
+<svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 10-11.5 9.9v-7h-2v-3h2V9c0-2 1.2-3 3-3 .9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.6-1.3 1.2v1.7h2.2l-.4 3h-1.8v7A10 10 0 0022 12"/></svg>
+</a>
+
+<a href="#" class="icon-btn">
+<svg viewBox="0 0 24 24"><path d="M7 2C4 2 2 4 2 7v10c0 3 2 5 5 5h10c3 0 5-2 5-5V7c0-3-2-5-5-5H7zm5 5a5 5 0 110 10 5 5 0 010-10z"/></svg>
+</a>
+
+<a href="#" class="icon-btn">
+<svg viewBox="0 0 24 24"><path d="M4 3C3 3 2 4 2 5v14c0 1 1 2 2 2h16c1 0 2-1 2-2V5c0-1-1-2-2-2H4zm5 16H6V9h3v10zm11 0h-3v-5c0-1-.5-2-1.5-2S14 13 14 14v5h-3V9h3v1c.5-.8 1.5-1.5 3-1.5 2 0 3 1.5 3 4V19z"/></svg>
+</a>
+
 </div>
 
 </section>
 
 <footer>
-ICU Investigations LLC | Indianapolis, Indiana
+ICU Investigations LLC | Indianapolis, Indiana<br>
+317-426-6002 | icu@investigationsicu.com
 </footer>
 
 </body>
