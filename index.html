@@ -644,6 +644,23 @@ ICU Investigations LLC
 © 2026 ICU Investigations LLC. All rights reserved.
 </div>
 ```html
+
+const faqItems = document.querySelectorAll('.faq-item');
+
+faqItems.forEach(item => {
+
+const question = item.querySelector('.faq-question');
+
+question.addEventListener('click', () => {
+
+item.classList.toggle('active');
+
+});
+
+});
+
+</script>
+```
 <!-- ================= FAQ SECTION ================= -->
 
 <section class="faq-section">
@@ -819,23 +836,6 @@ transform:rotate(45deg);
 </style>
 
 <script>
-
-const faqItems = document.querySelectorAll('.faq-item');
-
-faqItems.forEach(item => {
-
-const question = item.querySelector('.faq-question');
-
-question.addEventListener('click', () => {
-
-item.classList.toggle('active');
-
-});
-
-});
-
-</script>
-```
 
 </footer>
 
