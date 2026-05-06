@@ -8,17 +8,21 @@
 
 <style>
 
-/* GENERAL */
+/* GLOBAL */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: #f4f8f4;
-  color: #1a1a1a;
+  background: #f6f6f3;
+  color: #222;
+}
+
+h1, h2, h3 {
+  margin: 10px 0;
 }
 
 /* HEADER */
 header {
-  background: #1b5e20;
+  background: linear-gradient(to right, #0b3d1f, #1b5e20);
   color: white;
   padding: 15px 40px;
   display: flex;
@@ -26,16 +30,33 @@ header {
   align-items: center;
 }
 
-header img {
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo img {
   height: 60px;
 }
 
-.nav button {
+nav a {
+  color: white;
+  margin: 0 12px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-buttons button {
   margin-left: 10px;
-  padding: 10px 18px;
-  border: none;
+  padding: 10px 16px;
   border-radius: 6px;
+  border: none;
   cursor: pointer;
+}
+
+.cta {
+  background: #c9a227;
 }
 
 .call {
@@ -43,27 +64,24 @@ header img {
   color: white;
 }
 
-.cta {
-  background: #c9a227;
-  color: black;
-}
-
-/* HERO SECTION */
+/* HERO */
 .hero {
-  position: relative;
-  background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 5%;
+  background: linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)),
   url('skyline.jpg');
   background-size: cover;
-  background-position: center;
-  padding: 160px 20px;
-  color: white;
-  overflow: hidden;
 }
 
-/* HERO TEXT */
-.hero-content {
+.hero-text {
   max-width: 600px;
-  margin-left: 5%;
+}
+
+.hero-text small {
+  color: #c9a227;
+  font-weight: bold;
 }
 
 .hero h1 {
@@ -74,48 +92,38 @@ header img {
   color: #c9a227;
 }
 
-.hero p {
-  margin: 20px 0;
-}
-
-.hero button {
-  background: #c9a227;
-  padding: 14px 22px;
+.hero-buttons button {
+  margin-right: 10px;
+  padding: 14px 20px;
+  border-radius: 6px;
   border: none;
-  cursor: pointer;
 }
 
-/* INVESTIGATOR (RIGHT SIDE) */
-.investigator {
-  position: absolute;
-  bottom: 0;
-  right: 5%;
-  height: 420px;
-  width: auto;
-  opacity: 0.9;
-  pointer-events: none;
-
-  /* Blend into skyline */
-  mix-blend-mode: multiply;
-
-  /* Fade bottom */
-  -webkit-mask-image: linear-gradient(to top, transparent 0%, black 35%);
-  mask-image: linear-gradient(to top, transparent 0%, black 35%);
-
-  /* Depth */
-  filter: drop-shadow(0px 0px 25px rgba(0,0,0,0.6));
+.hero img {
+  width: 380px;
 }
 
-/* SECTIONS */
-.section {
-  padding: 70px 20px;
+/* TRUST BAR */
+.trust-bar {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  background: #f0efe9;
+  padding: 25px;
   text-align: center;
 }
 
+.trust-bar div {
+  font-size: 14px;
+}
+
 /* SERVICES */
+.section {
+  padding: 60px 5%;
+}
+
 .services {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(3,1fr);
   gap: 20px;
 }
 
@@ -123,31 +131,72 @@ header img {
   background: white;
   padding: 25px;
   border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  border: 1px solid #eee;
 }
 
-/* TRUST BAR */
-.trust {
-  background: #1b5e20;
+.card h3 {
+  color: #1b5e20;
+}
+
+/* ABOUT + FORM */
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.notice {
+  background: #fff4e0;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.form-box {
+  background: linear-gradient(to right, #0b3d1f, #1b5e20);
   color: white;
   padding: 30px;
-  display: flex;
-  justify-content: space-around;
+  border-radius: 10px;
 }
 
-/* CONTACT */
-form input, form textarea {
-  width: 90%;
+.form-box input,
+.form-box textarea,
+.form-box select {
+  width: 100%;
   padding: 10px;
-  margin: 10px;
+  margin: 8px 0;
+}
+
+.form-box button {
+  background: #c9a227;
+  padding: 12px;
+  border: none;
+  width: 100%;
+}
+
+/* FAQ */
+.faq {
+  padding: 60px 5%;
+}
+
+.faq-item {
+  background: white;
+  margin-bottom: 10px;
+  padding: 15px;
+  cursor: pointer;
+  border-radius: 6px;
 }
 
 /* FOOTER */
 footer {
-  background: #1b5e20;
+  background: linear-gradient(to right, #0b3d1f, #1b5e20);
   color: white;
-  padding: 30px;
-  text-align: center;
+  padding: 40px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
 }
 
 </style>
@@ -157,61 +206,145 @@ footer {
 <body>
 
 <header>
-  <img src="logo.jpg">
-  <div class="nav">
-    <button class="cta" onclick="document.getElementById('contact').scrollIntoView()">Free Consultation</button>
-    <button class="call" onclick="window.location.href='tel:3174266002'">Call Now</button>
+  <div class="logo">
+    <img src="logo.jpg">
+    <div>
+      <strong>ICU INVESTIGATIONS</strong><br>
+      <small>DISCREET. DILIGENT. DETERMINED.</small>
+    </div>
+  </div>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Services</a>
+    <a href="#">About</a>
+    <a href="#">FAQ</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <div class="nav-buttons">
+    <button class="cta">Free Consultation</button>
+    <button class="call">317-426-6002</button>
   </div>
 </header>
 
 <section class="hero">
 
-  <div class="hero-content">
-    <h1>Answers You Need.<br><span>Results You Can Trust.</span></h1>
-    <p>Discreet, professional investigative services in Indianapolis</p>
+  <div class="hero-text">
+    <small>TRUTH. CLARITY. RESOLUTION.</small>
 
 ```
-<button onclick="document.getElementById('contact').scrollIntoView()">
-  Request Free Consultation
-</button>
+<h1>Answers You Need.<br>
+<span>Results You Can Trust.</span></h1>
+
+<p>
+  ICU Investigations provides discreet and professional investigative services for individuals,
+  attorneys, and businesses across Indiana.
+</p>
+
+<div class="hero-buttons">
+  <button class="cta">Free Consultation</button>
+  <button class="call">(317) 426-6002</button>
+</div>
 ```
 
   </div>
 
-  <img src="investigator.png" class="investigator">
+  <img src="investigator.png">
 
 </section>
+
+<div class="trust-bar">
+  <div>🔒 Confidential</div>
+  <div>🔍 Experienced</div>
+  <div>👤 Discreet</div>
+  <div>📊 Results Driven</div>
+</div>
 
 <section class="section">
   <h2>Our Services</h2>
+
   <div class="services">
-    <div class="card">Surveillance</div>
-    <div class="card">Infidelity Investigations</div>
-    <div class="card">Insurance Fraud</div>
-    <div class="card">Background Checks</div>
-    <div class="card">Missing Persons</div>
-    <div class="card">Corporate Investigations</div>
+    <div class="card"><h3>Surveillance</h3><p>Discreet monitoring.</p></div>
+    <div class="card"><h3>Background Investigations</h3><p>Verify information.</p></div>
+    <div class="card"><h3>Infidelity Investigations</h3><p>Find truth.</p></div>
+    <div class="card"><h3>Legal Support</h3><p>Evidence support.</p></div>
+    <div class="card"><h3>Business Investigations</h3><p>Protect business.</p></div>
+    <div class="card"><h3>Missing Persons</h3><p>Locate individuals.</p></div>
   </div>
 </section>
 
-<section class="trust">
-  <div>✔ Confidential</div>
-  <div>✔ Experienced</div>
-  <div>✔ Trusted</div>
+<section class="section split">
+
+  <div>
+    <h2>About ICU Investigations</h2>
+    <p>We provide accurate, reliable investigative services with integrity, discretion, and determination.</p>
+
+```
+<div class="notice">
+  <strong>Important Notice:</strong><br>
+  ICU Investigations is not a law firm and does not provide legal advice.
+</div>
+```
+
+  </div>
+
+  <div class="form-box">
+    <h3>Request Your Free Consultation</h3>
+
+```
+<form>
+  <input placeholder="Full Name">
+  <input placeholder="Phone Number">
+  <input placeholder="Email Address">
+  <select>
+    <option>What can we help you with?</option>
+    <option>Surveillance</option>
+    <option>Infidelity</option>
+  </select>
+  <textarea placeholder="Details"></textarea>
+  <button>Send Message</button>
+</form>
+```
+
+  </div>
+
 </section>
 
-<section class="section" id="contact">
-  <h2>Free Consultation</h2>
-  <form action="mailto:icu@investigationsicu.com">
-    <input type="text" placeholder="Your Name" required><br>
-    <input type="email" placeholder="Your Email" required><br>
-    <textarea placeholder="Tell us about your case" required></textarea><br>
-    <button type="submit">Send Message</button>
-  </form>
+<section class="faq">
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-item">How confidential are your services?</div>
+  <div class="faq-item">How much does an investigation cost?</div>
+  <div class="faq-item">How quickly can you start?</div>
+
 </section>
 
 <footer>
-  <p>Licensed in Indiana | ICU Investigations LLC</p>
+
+  <div class="footer-grid">
+    <div>
+      <strong>ICU Investigations</strong><br>
+      Indianapolis, Indiana
+    </div>
+
+```
+<div>
+  <strong>Contact</strong><br>
+  317-426-6002<br>
+  icu@investigationsicu.com
+</div>
+
+<div>
+  <strong>Quick Links</strong><br>
+  Home<br>
+  Services<br>
+  FAQ
+</div>
+```
+
+  </div>
+
 </footer>
 
 </body>
