@@ -449,18 +449,45 @@ margin-top:80px;
 
 @media(max-width:1000px){
 
-.nav-buttons{
+.logo{
 flex-direction:column;
 align-items:center;
+gap:8px;
+}
+
+.logo img{
+height:90px;
+width:auto;
+}
+
+.logo-text h2{
+font-size:24px;
+white-space:nowrap;
+}
+
+.logo-text p{
+font-size:13px;
+letter-spacing:1px;
+}
+
+.nav-buttons{
+display:flex;
+flex-direction:row;
+justify-content:center;
+align-items:center;
+gap:10px;
+flex-wrap:wrap;
+margin-top:10px;
 }
 
 .cta-btn,
 .call-btn{
-padding:10px 16px;
+padding:10px 14px;
 font-size:14px;
 width:auto;
-max-width:220px;
+max-width:none;
 justify-content:center;
+white-space:nowrap;
 }
 
 nav{
@@ -473,20 +500,16 @@ nav a{
 font-size:15px;
 }
 
-.logo-text h2{
-font-size:22px;
-}
-
-.logo-text p{
-font-size:13px;
-}
-
-.logo img{
-height:82px;
-}
-  
 header{
+grid-template-columns:1fr;
+gap:20px;
+text-align:center;
 padding:20px;
+}
+
+.hero{
+height:auto;
+padding:120px 20px;
 }
 
 .hero h1{
@@ -497,34 +520,6 @@ font-size:40px;
 font-size:18px;
 line-height:1.5;
 }
-  
-header{
-grid-template-columns:1fr;
-gap:20px;
-text-align:center;
-}
-
-.logo{
-justify-content:center;
-}
-
-.nav-buttons{
-justify-content:center;
-}
-
-.hero{
-height:auto;
-padding:120px 20px;
-}
-
-.hero h1{
-font-size:52px;
-}
-
-.hero p{
-font-size:20px;
-}
-
 .services{
 grid-template-columns:1fr;
 }
